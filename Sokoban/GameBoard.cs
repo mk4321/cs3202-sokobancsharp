@@ -34,6 +34,27 @@ namespace Sokoban
             theBoard[playerRow, playerColumn] = 'p';
         }
 
+        public void moveRight()
+        {
+            theBoard[playerRow, playerColumn] = ' ';
+            playerColumn--;
+            theBoard[playerRow, playerColumn] = 'p';
+        }
+
+        public void moveUp()
+        {
+            theBoard[playerRow, playerColumn] = ' ';
+            playerColumn--;
+            theBoard[playerRow, playerColumn] = 'p';
+        }
+
+        public void moveDown()
+        {
+            theBoard[playerRow, playerColumn] = ' ';
+            playerColumn--;
+            theBoard[playerRow, playerColumn] = 'p';
+        }
+
         public int getBoardRows() { return boardRows; }
         public int getBoardColumns() { return boardColumns; }
     }

@@ -25,5 +25,23 @@ namespace Sokoban
             board.moveLeft();
             form.Refresh();
         }
+
+        public void moveRight()
+        {
+            board.moveRight();
+            form.Refresh();
+        }
+
+        public void moveUp()
+        {
+            board.moveUp();
+            form.Refresh();
+        }
+
+        public void moveDown()
+        {
+            board.moveDown();
+            form.Refresh();
+        }
     }
 }
