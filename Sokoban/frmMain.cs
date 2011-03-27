@@ -45,13 +45,12 @@ namespace Sokoban
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             // Just to show you how to fill a rectangle in C#
             //  - you'll want to remove this line of code! (and the comments)
-            g.FillRectangle(new SolidBrush(Color.Black), 100, 125, cellWidth, cellHeight);
+            //g.FillRectangle(new SolidBrush(Color.Black), 100, 125, cellWidth, cellHeight);
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
            // Get the entire board and paint it
             for (int rows = 0; rows < board.getBoardRows(); rows++)
             {
-
                 for (int columns = 0; columns < board.getBoardColumns(); columns++)
                 {
                     char current = board.getCharacter(rows, columns);
@@ -59,6 +58,23 @@ namespace Sokoban
                     {
                         Point p = new Point(cellWidth * columns, cellHeight * rows);
                         g.DrawImage(player, p);
+                    }
+                    else if (current == '#')
+                    {
+                        g.FillRectangle(new SolidBrush(Color.Blue), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight);    
+                    }
+                    else if (current == 'g')
+                    {
+                        g.FillRectangle(new SolidBrush(Color.Gold), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight); 
+                    }
+                    else if (current == 'b')
+                    {
+                        Point p = new Point(cellWidth * columns, cellHeight * rows);
+                        g.DrawImage(ball, p);
+                    }
+                    else if (current == ' ')
+                    {
+                        g.FillRectangle(new SolidBrush(Color.Green), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight);    
                     }
                 }
             }
@@ -70,6 +86,18 @@ namespace Sokoban
             if (e.KeyCode == Keys.Left)
             {
                 gameController.moveLeft();
+            }
+            else if (e.KeyCode == Keys.Right)
+            {
+                gameController.moveRight();
+            }
+            else if (e.KeyCode == Keys.Up)
+            {
+                gameController.moveUp();
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                gameController.moveDown();
             }
         }
     }
