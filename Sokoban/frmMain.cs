@@ -62,7 +62,7 @@ namespace Sokoban
                     }
                     else if (current == '#')
                     {
-                        g.FillRectangle(new SolidBrush(Color.Blue), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight);    
+                        g.FillRectangle(new SolidBrush(Color.Red), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight);    
                     }
                     else if (current == 'g')
                     {
@@ -75,7 +75,7 @@ namespace Sokoban
                     }
                     else if (current == ' ')
                     {
-                        g.FillRectangle(new SolidBrush(Color.Green), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight);    
+                        g.FillRectangle(new SolidBrush(Color.Black), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight);    
                     }
                 }
             }
