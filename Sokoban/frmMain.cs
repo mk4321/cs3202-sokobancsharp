@@ -18,6 +18,7 @@ namespace Sokoban
 
         // Create an instance variable for the player and the ball
         private Image player = Image.FromFile("../../Images/character.gif");
+        //private Image player = Image.FromFile("../../Images/pacman.gif");
         private Image ball = Image.FromFile("../../Images/ball.gif");
 
         // Default constructor
