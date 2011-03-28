@@ -52,7 +52,9 @@ namespace Sokoban
         private void Move(int rowShiftByOne, int rowShiftByTwo, int columnShiftByOne, int columnShiftByTwo)
         {
             String nextTwoTiles = "";
-            if (playerColumn + columnShiftByTwo == -1)
+            //Checks to make sure the the row or column the player is attempting to enter 
+            //is not the first or last (the entire board must be surrounded by walls)
+            if (playerColumn + columnShiftByTwo == -1 || playerRow + rowShiftByTwo == -1 || playerColumn + columnShiftByTwo == boardColumns || playerRow + rowShiftByTwo == boardRows)
             {
                 nextTwoTiles = "bb";
             }
