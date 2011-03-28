@@ -25,10 +25,10 @@ namespace Sokoban
 
         public GameBoard()
         {
-            SetBoardDimensions("../../Images/" + boardSource);
+            SetBoardDimensions("../../Boards/" + boardSource);
             theBoard = new char[boardRows, boardColumns];
             originalCloneBoard = new char[boardRows, boardColumns];
-            PopulateBoard("../../Images/" + boardSource);
+            PopulateBoard("../../Boards/" + boardSource);
         }
 
         public char getCharacter(int row, int col)
@@ -127,7 +127,7 @@ namespace Sokoban
                     {
                         row++;
                         //Loops through the line
-                        for (int column = 0; column < 20; column++)
+                        for (int column = 0; column < line.Length; column++)
                         {
                             theBoard[row, column] = Convert.ToChar(line.Substring(column, 1));
                             //Sets the playerRow and playerColumn when 'p' is found

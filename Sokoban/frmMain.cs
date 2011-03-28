@@ -21,6 +21,9 @@ namespace Sokoban
         //private Image player = Image.FromFile("../../Images/pacman.gif");
         private Image ball = Image.FromFile("../../Images/ball.gif");
 
+        private Image wall = Image.FromFile("../../Images/wall.gif");
+        private Image goal = Image.FromFile("../../Images/goal.gif");
+
         // Default constructor
         public frmMain()
         {
@@ -35,6 +38,7 @@ namespace Sokoban
         public frmMain(GameBoard board)
         {
             InitializeComponent();
+            this.ClientSize = new System.Drawing.Size(board.getBoardColumns() * 20, board.getBoardRows() * 20);
             this.board = board;
             gameController = new Controller(board, this);
         }
@@ -62,11 +66,13 @@ namespace Sokoban
                     }
                     else if (current == '#')
                     {
-                        g.FillRectangle(new SolidBrush(Color.Red), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight);    
+                        Point p = new Point(cellWidth * columns, cellHeight * rows);
+                        g.DrawImage(wall, p);    
                     }
                     else if (current == 'g')
                     {
-                        g.FillRectangle(new SolidBrush(Color.Gold), cellWidth * columns, cellHeight * rows, cellWidth, cellHeight); 
+                        Point p = new Point(cellWidth * columns, cellHeight * rows);
+                        g.DrawImage(goal, p);  
                     }
                     else if (current == 'b')
                     {
