@@ -38,6 +38,9 @@ namespace Sokoban
         public frmMain(GameBoard board)
         {
             InitializeComponent();
+            //SetStyle(ControlStyles.UserPaint, true);
+            //SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+            //SetStyle(ControlStyles.DoubleBuffer, true);
             this.ClientSize = new System.Drawing.Size(board.getBoardColumns() * 20, board.getBoardRows() * 20);
             this.board = board;
             gameController = new Controller(board, this);

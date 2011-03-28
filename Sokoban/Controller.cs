@@ -35,7 +35,7 @@ namespace Sokoban
         public void moveUp()
         {
             board.MoveUp();
-            form.Refresh();
+            form.Refresh(); 
         }
 
         public void moveDown()
